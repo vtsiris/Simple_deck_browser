@@ -1,0 +1,43 @@
+.pointer {
+  cursor: pointer;
+}
+
+.card_type {
+  float: right;
+  border: 1px solid;
+  padding: 0px 15px 0px 15px;
+  margin: 5px 0px -5px 0px;
+}
+
+.center {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    margin-left: -50px;
+    margin-top: -25px;
+}
+
+.alert {
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   {color: black;}
+  25%  {color: #990000;}
+  50%  {color: #ff0000;}
+  75%  {color: #990000;}
+  100% {color: black;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {color: black;}
+  25%  {color: #990000;}
+  50%  {color: #ff0000;}
+  75%  {color: #990000;}
+  100% {color: black;}
+}

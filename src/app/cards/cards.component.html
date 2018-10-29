@@ -1,0 +1,22 @@
+<h2 class="title">
+  {{ selectedCard.name }}
+</h2>
+<div class="media">
+  <img class="mr-3" [src]="'http://52.57.88.137/api/card_image/' + selectedCard.name" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5>Description</h5>
+    <p>{{ selectedCard.text }}</p>
+    <h5 class="mt-5">Details</h5>
+    <div class="row">
+      <div class="col-2">
+          <small class="display"> <b>Attack:</b> {{ selectedCard.atk }}</small>
+          <small class="display"> <b>Defence:</b> {{ selectedCard.def }}</small>
+      </div>
+      <div class="col-5">
+        <small class="display"> <b>Card Level:</b> {{ selectedCard.level }}</small>
+        <small class="display"> <b>Card Type:</b>{{ selectedCard.type }}</small>
+        <small class="display"> <b>Family:</b> {{ selectedCard.family }}</small>
+      </div>
+    </div>
+  </div>
+</div>
