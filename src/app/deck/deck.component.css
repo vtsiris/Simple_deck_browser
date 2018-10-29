@@ -9,12 +9,26 @@
   margin: 5px 0px -5px 0px;
 }
 
-.center {
+/* .center {
     position: absolute;
     top: 25%;
     left: 40%;
     margin-left: -50px;
     margin-top: -25px;
+} */
+
+.center {
+  margin-left: 40%;
+  margin-top: 25%;
+}
+
+.fixed {
+  position: fixed;
+  top: 10%;
+  left: 22%;
+  width: 75%;
+  margin-left: -50px;
+  margin-top: -25px;
 }
 
 .alert {
