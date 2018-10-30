@@ -8,3 +8,28 @@
 display: block;
 }
 
+
+
+.addBtn{
+  color: blue;
+  border: 1px solid;
+  font-size: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.fa-plus {
+  margin-left: 20px;
+}
+
+.deck-image {
+  cursor: pointer;
+  float: left;
+  margin-top:18px;
+}
+
+.deck-image:hover {
+  opacity: 0.2;
+}
+

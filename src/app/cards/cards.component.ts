@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -6,15 +6,20 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent {
 
   @Input() selectedCard;
-
+  @Input() viewdCards;
+  @Output() addedCard = new EventEmitter();
+  @Output() deletedCard = new EventEmitter();
 
   constructor( ) { }
 
-  ngOnInit() {
-
+  addCard(card: string) {
+    this.addedCard.emit(card);
   }
 
+  deleteCard(index: number) {
+    this.deletedCard.emit(index);
+  }
 }

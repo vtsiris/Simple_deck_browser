@@ -6,8 +6,11 @@
   <div class="media-body">
     <h5>Description</h5>
     <p>{{ selectedCard.text }}</p>
-    <h5 class="mt-5">Details</h5>
-    <div class="row">
+    <div class="row mt-4">
+      <h5 class="ml-3">Details</h5>
+      <p class="addBtn" (click)="addCard(selectedCard.name)">Add Card <i class="fas fa-plus"></i> </p>
+    </div>
+    <div class="row mt-2">
       <div class="col-2" *ngIf="(selectedCard.atk || selectedCard.atk === 0) && (selectedCard.def || selectedCard.def === 0)">
           <small class="display" *ngIf="selectedCard.atk || selectedCard.atk === 0"> <b>Attack:</b> {{ selectedCard.atk }}</small>
           <small class="display" *ngIf="selectedCard.def || selectedCard.def === 0"> <b>Defence:</b> {{ selectedCard.def }}</small>
@@ -21,3 +24,12 @@
     </div>
   </div>
 </div>
+
+
+<h3 style="margin-top: 50px;" *ngIf="viewdCards.length">Selected Cards for Deck<span style="font-size: 22px;">  --  {{viewdCards.length}}/8 </span></h3>
+<div (click)="deleteCard(i)" *ngFor="let card of viewdCards; let i = index;">
+    <img class="mr-2 deck-image" [src]="'http://52.57.88.137/api/card_image/' + card" height="100px;"  alt="Selected {{viewdCards.name}}">
+</div>
+
+
+
