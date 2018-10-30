@@ -59,12 +59,11 @@ export class DeckComponent implements OnInit  {
 
 
   addCard(card) {
-    // if (this.viewdCards.length < 8) {
-    //   this.viewdCards.push(card);
-    // } else {
-    //   alert('Selected cards must not exceed the required number');
-    // }
-    this.viewdCards.push(card);
+    if (this.viewdCards.length < 8) {
+      this.viewdCards.push(card);
+    } else {
+      alert('Selected cards must not exceed the required number');
+    }
   }
 
   deleteCard(cardIndex) {
