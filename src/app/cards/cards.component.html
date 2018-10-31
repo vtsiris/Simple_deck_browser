@@ -18,7 +18,7 @@
       <div class="col-5">
         <small class="display" *ngIf="selectedCard.level"> <b>Card Level:</b> {{ selectedCard.level }}</small>
         <small class="display" *ngIf="selectedCard.card_type"> <b>Card Type:</b> {{ selectedCard.card_type | titlecase }} </small>
-        <small class="display" *ngIf="selectedCard.type"> <b>Type:</b>{{ selectedCard.type | titlecase }} </small>
+        <small class="display" *ngIf="selectedCard.type"> <b>Type:</b> {{ selectedCard.type | titlecase }} </small>
         <small class="display" *ngIf="selectedCard.family"> <b>Family:</b> {{ selectedCard.family | titlecase }}</small>
       </div>
     </div>
@@ -26,9 +26,9 @@
 </div>
 
 
-<h3 style="margin-top: 50px;" *ngIf="viewdCards.length">Selected Cards for Deck<span style="font-size: 22px;">  --  {{viewdCards.length}}/8 </span></h3>
-<div (click)="deleteCard(i)" *ngFor="let card of viewdCards; let i = index;">
-    <img class="mr-2 deck-image" [src]="'http://52.57.88.137/api/card_image/' + card" height="100px;"  alt="Selected {{viewdCards.name}}">
+<h3 style="margin-top: 50px;" *ngIf="selectedDeckCards.length">Selected Cards for Deck<span style="font-size: 22px;">  --  {{selectedDeckCards.length}}/8 </span></h3>
+<div (click)="deleteCard(i)" *ngFor="let card of selectedDeckCards; let i = index;">
+    <img class="mr-2 deck-image" [src]="'http://52.57.88.137/api/card_image/' + card" height="100px;"  alt="Selected {{selectedDeckCards.name}}">
 </div>
 
 

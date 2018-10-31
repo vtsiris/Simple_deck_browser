@@ -1,25 +1,28 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CardsComponent } from './cards.component';
 
 describe('CardsComponent', () => {
   let component: CardsComponent;
-  let fixture: ComponentFixture<CardsComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CardsComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new CardsComponent();
+  });
+  it('#should create CardComponent', () => {
+    expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('#should raise addedCard event when a card is selected', add => {
+    component.addedCard.subscribe(x => {
+      expect(x).toEqual('card');
+      add();
+    });
+    component.addCard('card');
+  });
+
+  it('#should raise deletedCard event when a card is deleted', del => {
+    component.deletedCard.subscribe(x => {
+      expect(x).toEqual(1);
+      del();
+    });
+    component.deleteCard(1);
   });
 });

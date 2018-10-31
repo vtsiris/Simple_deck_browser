@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CardsComponent {
 
   @Input() selectedCard;
-  @Input() viewdCards;
+  @Input() selectedDeckCards;
   @Output() addedCard = new EventEmitter();
   @Output() deletedCard = new EventEmitter();
 

@@ -10,11 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeckComponent implements OnInit  {
 
-  clicked = false;
   selectedCard: any;
-  viewdCards = [];
+  selectedDeckCards = [];
   information = 'Please select a card';
-
+  newDeck = [];
   deck = [
     'Burial from a Different Dimension',
     'Charge of the Light Brigade',
@@ -38,7 +37,6 @@ export class DeckComponent implements OnInit  {
     'Void Seer',
   ];
 
-  newDeck = [];
 
 
   constructor( private dataService: DataService ) { }
@@ -59,15 +57,15 @@ export class DeckComponent implements OnInit  {
 
 
   addCard(card) {
-    if (this.viewdCards.length < 8) {
-      this.viewdCards.push(card);
+    if (this.selectedDeckCards.length < 8) {
+      this.selectedDeckCards.push(card);
     } else {
       alert('Selected cards must not exceed the required number');
     }
   }
 
-  deleteCard(cardIndex) {
-    this.viewdCards.splice(cardIndex, 1);
+  deleteCard(cardIndex: number) {
+    this.selectedDeckCards.splice(cardIndex, 1);
   }
 
 }

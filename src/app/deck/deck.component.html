@@ -5,7 +5,7 @@
         <tbody>
           <tr *ngFor="let card of newDeck">
             <td (click)="selectCard(card)">
-              {{ card.name | titlecase}}
+              {{ card.name }}
               <br>
               <small class="card_type"> {{ card.card_type | titlecase}}</small>
             </td>
@@ -13,18 +13,17 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 fixed">
       <h4
       *ngIf="!selectedCard"
       class="center pointer"
       >
       {{information}}
-      {{ newDeck }}
     </h4>
       <app-cards
       *ngIf="selectedCard"
       [selectedCard]="selectedCard"
-      [viewdCards]="viewdCards"
+      [selectedDeckCards]="selectedDeckCards"
       (addedCard)="addCard($event)"
       (deletedCard)="deleteCard($event)"
       ></app-cards>
