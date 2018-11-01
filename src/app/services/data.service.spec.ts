@@ -1,13 +1,10 @@
-import { DeckComponent } from './../deck/deck.component';
 import { DataService } from './data.service';
-import { from } from 'rxjs';
-
+import { from, throwError } from 'rxjs';
 
 describe('DataService', () => {
-
   let service: DataService;
 
-  beforeEach( () => {
+  beforeEach(() => {
     service = new DataService(null);
   });
 
@@ -19,13 +16,25 @@ describe('DataService', () => {
     let deck = [];
     const items = [1, 2, 3];
     const args = 'args';
-    spyOn(service, 'getAll').and.callFake( () => {
+    spyOn(service, 'getAll').and.callFake(() => {
       return from([items]);
     });
 
-    service.getAll(args).subscribe( x => deck = x);
+    service.getAll(args).subscribe(x => (deck = x));
 
     expect(deck).toEqual(items);
   });
 
+  it('should set the message property if server returns an error when adding a new todo', () => {
+    const error = 'Error from the server';
+    let result;
+    const args = 'args';
+    spyOn(service, 'getAll').and.callFake(t => {
+      return throwError(error);
+    });
+
+    service.getAll(args).subscribe(() => console.log(), err => (result = err));
+
+    expect(result).toBe(error);
+  });
 });

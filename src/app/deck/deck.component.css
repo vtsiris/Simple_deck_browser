@@ -1,3 +1,9 @@
+.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  height: 100%;
+}
+
 .pointer {
   cursor: pointer;
 }

@@ -1,6 +1,8 @@
-<h2 class="title">
-  {{ selectedCard.name }}
-</h2>
+<div>
+  <h2 class="title">
+    {{ selectedCard.name }}
+  </h2>
+</div>
 <div class="media">
   <img class="mr-3" [src]="'http://52.57.88.137/api/card_image/' + selectedCard.name" alt="Generic placeholder image">
   <div class="media-body">
@@ -8,7 +10,7 @@
     <p>{{ selectedCard.text }}</p>
     <div class="row mt-4">
       <h5 class="ml-3">Details</h5>
-      <p class="addBtn" (click)="addCard(selectedCard.name)">Add Card <i class="fas fa-plus"></i> </p>
+      <button type="button" class="btn btn-outline-primary btnSpec" (click)="addCard(selectedCard.name)"> <p class="addBtn">Add Card <i class="fas fa-plus"></i> </p> </button>
     </div>
     <div class="row mt-2">
       <div class="col-2" *ngIf="(selectedCard.atk || selectedCard.atk === 0) && (selectedCard.def || selectedCard.def === 0)">

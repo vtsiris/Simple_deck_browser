@@ -13,8 +13,6 @@ export class CardsComponent {
   @Output() addedCard = new EventEmitter();
   @Output() deletedCard = new EventEmitter();
 
-  constructor( ) { }
-
   addCard(card: string) {
     this.addedCard.emit(card);
   }

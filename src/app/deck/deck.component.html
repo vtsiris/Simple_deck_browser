@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-2">
       <table class="table table-striped table-hover pointer">
         <tbody>
           <tr *ngFor="let card of newDeck">
@@ -13,20 +13,12 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-10 fixed">
-      <h4
-      *ngIf="!selectedCard"
-      class="center pointer"
-      >
-      {{information}}
-    </h4>
-      <app-cards
-      *ngIf="selectedCard"
-      [selectedCard]="selectedCard"
-      [selectedDeckCards]="selectedDeckCards"
-      (addedCard)="addCard($event)"
-      (deletedCard)="deleteCard($event)"
-      ></app-cards>
+    <div class="col-10">
+      <h4 *ngIf="!selectedCard" class="center pointer">
+        {{information}}
+      </h4>
+      <app-cards *ngIf="selectedCard" [selectedCard]="selectedCard" [selectedDeckCards]="selectedDeckCards" (addedCard)="addCard($event)"
+        (deletedCard)="deleteCard($event)"></app-cards>
     </div>
-    </div>
+  </div>
 </div>

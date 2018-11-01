@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { catchError, map } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 
 
@@ -16,7 +17,8 @@ export class DataService {
 
 getAll(name: string) {
   return this.http.get(this.url + name).pipe(
-    map (response => response.json())
+    map (response => response.json()),
+    catchError( error => throwError(error))
   );
 }
 
