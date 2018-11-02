@@ -10,16 +10,18 @@
     <p>{{ selectedCard.text }}</p>
     <div class="row mt-4">
       <h5 class="ml-3">Details</h5>
-      <button type="button" class="btn btn-outline-primary btnSpec" (click)="addCard(selectedCard.name)"> <p class="addBtn">Add Card <i class="fas fa-plus"></i> </p> </button>
+      <button type="button" class="btn btn-outline-primary btnSpec" (click)="addCard(selectedCard.name)">
+        <p class="addBtn">Add Card <i class="fas fa-plus"></i> </p>
+      </button>
     </div>
     <div class="row mt-2">
       <div class="col-2" *ngIf="(selectedCard.atk || selectedCard.atk === 0) && (selectedCard.def || selectedCard.def === 0)">
-          <small class="display" *ngIf="selectedCard.atk || selectedCard.atk === 0"> <b>Attack:</b> {{ selectedCard.atk }}</small>
-          <small class="display" *ngIf="selectedCard.def || selectedCard.def === 0"> <b>Defence:</b> {{ selectedCard.def }}</small>
+        <small class="display" *ngIf="selectedCard.atk || selectedCard.atk === 0"> <b>Attack:</b> {{ selectedCard.atk}}</small>
+        <small class="display" *ngIf="selectedCard.def || selectedCard.def === 0"> <b>Defence:</b> {{ selectedCard.def}}</small>
       </div>
       <div class="col-5">
         <small class="display" *ngIf="selectedCard.level"> <b>Card Level:</b> {{ selectedCard.level }}</small>
-        <small class="display" *ngIf="selectedCard.card_type"> <b>Card Type:</b> {{ selectedCard.card_type | titlecase }} </small>
+        <small class="display" *ngIf="selectedCard.card_type"> <b>Card Type:</b> {{ selectedCard.card_type | titlecase}} </small>
         <small class="display" *ngIf="selectedCard.type"> <b>Type:</b> {{ selectedCard.type | titlecase }} </small>
         <small class="display" *ngIf="selectedCard.family"> <b>Family:</b> {{ selectedCard.family | titlecase }}</small>
       </div>
@@ -28,10 +30,9 @@
 </div>
 
 
-<h3 style="margin-top: 50px;" *ngIf="selectedDeckCards.length">Selected Cards for Deck<span style="font-size: 22px;">  --  {{selectedDeckCards.length}}/8 </span></h3>
-<div (click)="deleteCard(i)" *ngFor="let card of selectedDeckCards; let i = index;">
-    <img class="mr-2 deck-image" [src]="'http://52.57.88.137/api/card_image/' + card" height="100px;"  alt="Selected {{selectedDeckCards.name}}">
+<h3 style="margin-top: 50px;" *ngIf="newDeck.length">
+  Selected Cards for Deck <span style="font-size: 22px;"> --{{newDeck.length}}/8 </span>
+</h3>
+<div (click)="deleteCard(i)" *ngFor="let card of newDeck; let i = index;">
+  <img class="mr-2 deck-image" [src]="'http://52.57.88.137/api/card_image/' + card" height="100px;" alt="Selected {{newDeck.name}}">
 </div>
-
-
-

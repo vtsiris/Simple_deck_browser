@@ -16,10 +16,10 @@
 }
 
 .center {
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    margin-left: -50px;
-    margin-top: -25px;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  margin-left: -50px;
+  margin-top: -25px;
+  width: 250px;
 }
-

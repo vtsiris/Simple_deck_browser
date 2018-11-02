@@ -25,7 +25,7 @@ describe('DataService', () => {
     expect(deck).toEqual(items);
   });
 
-  it('should set the message property if server returns an error when adding a new todo', () => {
+  it('#should catch the Error if server throws one', () => {
     const error = 'Error from the server';
     let result;
     const args = 'args';
